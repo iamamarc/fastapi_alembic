@@ -6,6 +6,7 @@ from sqlalchemy.orm import relationship
 from db.db_setup import Base
 from .mixin import Timestamp
 
+
 class Role(enum.Enum):
     teacher = 1
     student = 2
