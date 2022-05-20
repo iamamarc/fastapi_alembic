@@ -1,12 +1,14 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+
+from db.db_setup import get_db
 
 router = APIRouter()
 
 
 @router.get("/courses")
-async def read_courses():
-    return {"courses": []}
-
+async def read_courses(db: Session = Depends(get_db)):
+    courses = get_course(db=db)
+    return courses
 
 @router.post("/courses")
 async def create_course_api():

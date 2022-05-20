@@ -7,7 +7,7 @@ from db.db_setup import Base
 from .mixin import Timestamp
 
 
-class Role(enum.Enum):
+class Role(enum.IntEnum):
     teacher = 1
     student = 2
 
